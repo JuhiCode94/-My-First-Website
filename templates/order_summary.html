@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Order Summary - Juhi Sweets{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Order Summary</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Selected Item:</h5>
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-3 mb-md-0">
+                    <img src="{{ image_url }}" alt="Selected Item" class="img-fluid">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <p class="card-text">{{ item }}</p> <!-- Display item name -->
+                    <h5 class="card-title">Price per item:</h5>
+                    <p class="card-text">${{ price }}</p> <!-- Display item price -->
+                    <h5 class="card-title">Quantity:</h5>
+                    <p class="card-text">{{ quantity }}</p> <!-- Display quantity -->
+                    <h5 class="card-title">Total Price:</h5>
+                    <p class="card-text">${{ total_price }}</p> <!-- Display total price -->
+                    
+                    <hr>
+                    
+                    <h5 class="card-title">Customer Details:</h5>
+                    <p class="card-text"><strong>Name:</strong> {{ name }}</p>
+                    <p class="card-text"><strong>Email:</strong> {{ email }}</p>
+                    <p class="card-text"><strong>Phone Number:</strong> {{ phone }}</p>
+                    <p class="card-text"><strong>Street Address:</strong> {{ street }}</p>
+                    <p class="card-text"><strong>City:</strong> {{ city }}</p>
+                    <p class="card-text"><strong>State/Province:</strong> {{ state }}</p>
+                    <p class="card-text"><strong>Postal Code:</strong> {{ postal_code }}</p>
+                    <p class="card-text"><strong>Country:</strong> {{ country }}</p>
+                    
+                    <!-- Form for confirming or canceling the order -->
+                    <form action="{% url 'order_summary' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="item" value="{{ item }}">
+                        <input type="hidden" name="price" value="{{ price }}">
+                        <input type="hidden" name="quantity" value="{{ quantity }}">
+                        <input type="hidden" name="total_price" value="{{ total_price }}">
+                        <input type="hidden" name="name" value="{{ name }}">
+                        <input type="hidden" name="email" value="{{ email }}">
+                        <input type="hidden" name="phone" value="{{ phone }}">
+                        <input type="hidden" name="street" value="{{ street }}">
+                        <input type="hidden" name="city" value="{{ city }}">
+                        <input type="hidden" name="state" value="{{ state }}">
+                        <input type="hidden" name="postal_code" value="{{ postal_code }}">
+                        <input type="hidden" name="country" value="{{ country }}">
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <button type="submit" class="btn btn-primary btn-block" name="confirm" value="confirm">Confirm and Checkout</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-secondary btn-block" onclick="window.history.back();">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

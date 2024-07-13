@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Juhi Sweets{% endblock %}
+
+{% load static %}
+
+{% block body %}
+<style>
+    /* Styling for the main contact header */
+    .contact-header {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #d2691e; /* Fun color for header */
+        text-shadow: 2px 2px #ffdab9; /* Text shadow for effect */
+    }
+
+    /* Centering the contact section and setting a max width */
+    .contact-section {
+        margin: 40px auto; /* Center the section */
+        max-width: 800px; /* Adjust maximum width if needed */
+    }
+
+    /* Styling for the contact form container */
+    .contact-form {
+        background-color: #ffebcd; /* Light background color for the form */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Slight shadow for depth */
+    }
+
+    /* Styling for the contact form header */
+    .contact-form h2 {
+        color: #8b0000; /* Complementary color for form header */
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    /* Styling for each form group */
+    .contact-form .form-group {
+        margin-bottom: 15px;
+    }
+
+    /* Styling for the form input fields */
+    .contact-form .form-control {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    /* Styling for the form submit button */
+    .contact-form .btn {
+        background-color: #d2691e; /* Button color */
+        color: #fff; /* Button text color */
+        border-radius: 5px;
+        padding: 10px 20px;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    /* Styling for the contact information section */
+    .contact-info {
+        margin-top: 40px;
+    }
+
+    /* Styling for the contact information headers */
+    .contact-info h2 {
+        color: #8b0000;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    /* Styling for the contact information paragraphs */
+    .contact-info p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* Styling for the map container */
+    .map-container {
+        margin-top: 40px;
+    }
+
+    /* Styling for the embedded Google Map */
+    .map-container iframe {
+        width: 100%; /* Full width */
+        height: 400px; /* Fixed height */
+        border: 0;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container text-center contact-section">
+    <!-- Image for visual appeal at the top of the contact section -->
+    <img src="{% static 'img/contact-contact us' %}" alt="Contact Us" class="contact-image">
+    <!-- Main header for the contact page -->
+    <h1 class="contact-header">Contact Us</h1>
+    <div class="row">
+        <!-- Contact form column -->
+        <div class="col-md-6">
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <!-- Contact form with POST method -->
+                <form action="/contact" method="POST">
+                    {% csrf_token %}
+                    <!-- Name input field -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <!-- Email input field -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <!-- Message textarea field -->
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <!-- Submit button -->
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <!-- Contact information column -->
+        <div class="col-md-6">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Address:</strong> 123 Sweet Street, Dessert Town, Candyland</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Email:</strong> info@juhisweets.com</p>
+                <p>Follow us on social media:</p>
+                <p>
+                    <a href="https://facebook.com/juhisweets" target="_blank">Facebook</a> |
+                    <a href="https://twitter.com/juhisweets" target="_blank">Twitter</a> |
+                    <a href="https://instagram.com/juhisweets" target="_blank">Instagram</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center contact-section map-container">
+    <h2>Find Us Here</h2>
+    <!-- Embedded Google Map showing the location -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086663609716!2d144.95592531531756!3d-37.817209979751716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727cfb06d04d7b!2s123%20Sweet%20St%2C%20Melbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2sus!4v1634255781598!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+</div>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Chocolates - Juhi Sweets{% endblock %}
+
+{% load static %}
+
+{% block body %}
+<!-- Custom CSS styles for the Chocolates page -->
+<style>
+    /* Styling for each chocolate item */
+    .chocolate-item {
+        margin-bottom: 30px; /* Space between each chocolate item */
+        text-align: center; /* Center-align text */
+    }
+
+    /* Image styling */
+    .chocolate-item img {
+        height: 300px; /* Set a fixed height for images */
+        width: 100%; /* Ensure images fill the container */
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+        border-radius: 15px; /* Rounded corners for images */
+    }
+
+    /* Chocolate title styling */
+    .chocolate-item h3 {
+        font-size: 1.5rem; /* Larger font size for titles */
+        margin-top: 10px; /* Space above the title */
+        color: #8b0000; /* Dark red color for chocolate titles */
+    }
+
+    /* Chocolate description styling */
+    .chocolate-item p {
+        font-size: 1rem; /* Regular font size for descriptions */
+        color: #d2691e; /* Light brown color for chocolate descriptions */
+    }
+
+    /* Price styling */
+    .chocolate-item .price {
+        font-size: 1.2rem; /* Slightly larger font size for prices */
+        font-weight: bold; /* Bold font weight for emphasis */
+        color: #8b0000; /* Dark red color for price */
+        margin: 10px 0; /* Margin around the price */
+    }
+
+    /* Buy button styling */
+    .chocolate-item .btn-buy {
+        background-color: #FF6347; /* Coral color for button background */
+        border-color: #FF6347; /* Coral color for button border */
+        color: white; /* White text color */
+        transition: background-color 0.3s, border-color 0.3s; * Smooth transition on hover */
+    }
+
+    /* Hover effect for buy button */
+    .chocolate-item .btn-buy:hover {
+        background-color: #000; /* Black background on hover */
+        border-color: #000; /* Black border on hover */
+        color: #FF6347; /* Coral text color on hover */
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+        .chocolate-item img {
+            height: 200px; /* Adjust image height on smaller screens */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .chocolate-item img {
+            height: 150px; /* Further adjust image height on smaller screens */
+        }
+    }
+</style>
+
+<!-- Container for chocolates with margin -->
+<div class="container my-5">
+    <!-- Main heading for chocolates section -->
+    <h1 class="text-center mb-5" style="color: #8b0000; font-family: 'Indie Flower', cursive;">Our Delicious Chocolates</h1>
+    <!-- Row for chocolate items -->
+    <div class="row">
+        <!-- Chocolate Item 1 -->
+        <div class="col-md-4 chocolate-item">
+            <img src="{% static 'img/chocolate-Dark Chocolate' %}" alt="Dark Chocolate">
+            <h3>Dark Chocolate</h3>
+            <p>Rich and intense dark chocolate, perfect for true chocolate lovers.</p>
+            <div class="price">$10</div>
+            <a href="/order_confirmation?item=Dark%20Chocolate&price=10&image_url={% static 'img/chocolate-Dark Chocolate' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Chocolate Item 2 -->
+        <div class="col-md-4 chocolate-item">
+            <img src="{% static 'img/chocolate-Milk Chocolate' %}" alt="Milk Chocolate">
+            <h3>Milk Chocolate</h3>
+            <p>Smooth and creamy milk chocolate that melts in your mouth.</p>
+            <div class="price">$8</div>
+            <a href="/order_confirmation?item=Milk%20Chocolate&price=8&image_url={% static 'img/chocolate-Milk Chocolate' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Chocolate Item 3 -->
+        <div class="col-md-4 chocolate-item">
+            <img src="{% static 'img/chocolate-White Chocolate' %}" alt="White Chocolate">
+            <h3>White Chocolate</h3>
+            <p>Sweet and creamy white chocolate, a delightful treat.</p>
+            <div class="price">$9</div>
+            <a href="/order_confirmation?item=White%20Chocolate&price=9&image_url={% static 'img/chocolate-White Chocolate' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+    </div>
+    <!-- Second row for additional chocolate items -->
+    <div class="row">
+        <!-- Chocolate Item 4 -->
+        <div class="col-md-4 chocolate-item">
+            <img src="{% static 'img/chocolate-Assorted Chocolates' %}" alt="Assorted Chocolates">
+            <h3>Assorted Chocolates</h3>
+            <p>A delightful mix of our best chocolates, perfect for gifting.</p>
+            <div class="price">$15</div>
+            <a href="/order_confirmation?item=Assorted%20Chocolates&price=15&image_url={% static 'img/chocolate-Assorted Chocolates' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Chocolate Item 5 -->
+        <div class="col-md-4 chocolate-item">
+            <img src="{% static 'img/chocolate-Chocolate Truffles' %}" alt="Chocolate Truffles">
+            <h3>Chocolate Truffles</h3>
+            <p>Decadent chocolate truffles with a rich, velvety center.</p>
+            <div class="price">$12</div>
+            <a href="/order_confirmation?item=Chocolate%20Truffles&price=12&image_url={% static 'img/chocolate-Chocolate Truffles' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Chocolate Item 6 -->
+        <div class="col-md-4 chocolate-item">
+            <img src="{% static 'img/chocolate-Chocolate Bars' %}" alt="Chocolate Bars">
+            <h3>Chocolate Bars</h3>
+            <p>A variety of chocolate bars with different flavors and fillings.</p>
+            <div class="price">$7</div>
+            <a href="/order_confirmation?item=Chocolate%20Bars&price=7&image_url={% static 'img/chocolate-Chocolate Bars' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Juhi Sweets{% endblock %}
+
+{% load static %}
+
+{% block body %}
+
+<!-- 
+    Styling for the carousel, welcome message, and featured products sections.
+    Adjustments include carousel item heights, image covering without distortion,
+    customized carousel control arrows, and responsive design for different devices.
+-->
+<style>
+    /* Carousel item height adjustment */
+    .carousel-item {
+        height: 70vh; /* Default height for larger screens */
+    }
+    
+    /* Ensure the image covers the area without distortion */
+    .carousel-item img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* Ensure the image covers the area without distortion */
+    }
+
+    /* Customize carousel control arrows */
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        background-color: black; /* Change arrow color to black */
+    }
+    
+    /* Optional: Adjust arrow size or other styles if needed */
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        width: 30px; /* Example: Adjust width */
+        height: 30px; /* Example: Adjust height */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .carousel-item {
+            height: 60vh; /* Adjust height for tablets and smaller devices */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .carousel-item {
+            height: 50vh; /* Adjust height for mobile devices */
+        }
+    }
+
+    /* Center and style welcome message */
+    .welcome-message {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #d2691e; /* Fun color for text */
+        text-shadow: 2px 2px #ffdab9; /* Text shadow for fun effect */
+    }
+
+    .welcome-message p {
+        font-size: 1.5rem;
+        color: #8b0000; /* Complementary color for subtitle */
+        text-shadow: 1px 1px #ffe4e1; /* Subtle text shadow */
+    }  
+</style>
+
+<div class="container-fluid p-0">
+    <!-- Welcome message section -->
+    <div class="welcome-message">
+        <h1>Welcome to Juhi Sweets!</h1>
+        <p>Enjoy our wide variety of sweets and desserts.</p>
+    </div>
+    <!-- Carousel section -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/index-cake_1' %}" class="d-block w-100" alt="Cake Image">
+                <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; max-width: 600px; margin: auto;">
+                    <h5>Delicious Cakes</h5>
+                    <p>Indulge in our freshly baked cakes, perfect for any occasion.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/index-chocolate_1' %}" class="d-block w-100" alt="Chocolate Image">
+                <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; max-width: 600px; margin: auto;">
+                    <h5>Chocolates & More</h5>
+                    <p>Experience the richness of our handmade chocolates, a treat for all ages.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/index-ice cream_1' %}" class="d-block w-100" alt="Ice Cream Image">
+                <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; max-width: 600px; margin: auto;">
+                    <h5>Refreshing Ice Cream</h5>
+                    <p>Cool down with our variety of ice creams, crafted with the finest ingredients.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- Featured Products section -->
+<section id="featured-products" class="text-center my-5">
+    <div class="container">
+        <h2>Featured Products</h2>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-4">
+                <a href="/order_confirmation?item=Assorted%20flavor%20donuts&price=25&image_url={% static 'img/index-Assorted flavor donuts' %}" class="product-link">
+                    <img src="{% static 'img/index-Assorted flavor donuts' %}" alt="Product 1" class="img-fluid">
+                </a>
+                <h3>Assorted flavor donuts</h3>
+                <p>A delightful treat that everyone loves.</p>
+                <div class="price">$25</div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-4">
+                <a href="/order_confirmation?item=Chocolate%20with%20Raspberry&price=15&image_url={% static 'img/index-Chocolate with Raspberry' %}" class="product-link">
+                    <img src="{% static 'img/index-Chocolate with Raspberry' %}" alt="Product 2" class="img-fluid">
+                </a>
+                <h3>Chocolate with Raspberry</h3>
+                <p>Perfect for any celebration.</p>
+                <div class="price">$15</div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <a href="/order_confirmation?item=Coned%20ice%20cream%20with%20blueberries%20and%20flowers&price=12&image_url={% static 'img/index-Coned ice cream with blueberries and flowers' %}" class="product-link">
+                    <img src= "{% static 'img/index-Coned ice cream with blueberries and flowers' %}"alt="Product 3" class="img-fluid">
+                </a>
+                <h3>Coned ice cream with blueberries and flowers</h3>
+                <p>Indulge in the rich flavors of this sweet.</p>
+                <div class="price">$12</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* CSS for changing image color on hover */
+    .product-link:hover img {
+        filter: grayscale(100%) brightness(80%); /* Example effect: Grayscale with reduced brightness */
+    }
+</style>
+
+<!-- Testimonials section -->
+<section id="testimonials" class="text-center my-5">
+    <div class="container">
+        <h2 style="color: #FF6347; font-family: 'Indie Flower', cursive; font-size: 2.5rem;">Customer Testimonials</h2>
+        <div class="row">
+            <div class="col-md-4" style="background-color: #FFF9EC; padding: 20px; border-radius: 10px;">
+                <p style="color: #FF6347; font-family: 'Indie Flower', cursive; font-size: 1.2rem;">"Juhi Sweets has the best cakes I've ever tasted! Highly recommend!"</p>
+                <p style="color: #FF6347; font-family: 'Indie Flower', cursive; font-size: 1rem;">- Happy Customer</p>
+            </div>
+            <div class="col-md-4" style="background-color: #FFF9EC; padding: 20px; border-radius: 10px;">
+                <p style="color: #FF6347; font-family: 'Indie Flower', cursive; font-size: 1.2rem;">"The chocolates are simply amazing. My kids love them!"</p>
+                <p style="color: #FF6347; font-family: 'Indie Flower', cursive; font-size: 1rem;">- Satisfied Parent</p>
+            </div>
+            <div class="col-md-4" style="background-color: #FFF9EC; padding: 20px; border-radius: 10px;">
+                <p style="color: #FF6347; font-family: 'Indie Flower', cursive; font-size: 1.2rem;">"Great service and delicious sweets. Always a pleasure to shop here."</p>
+                <p style="color: #FF6347; font-family: 'Indie Flower', cursive; font-size: 1rem;">- Loyal Customer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action section -->
+<section id="cta" class="text-center my-5">
+    <div class="container">
+        <h2>Visit Us or Order Online!</h2>
+        <p>Come by our shop to experience the delightful world of Juhi Sweets in person, or place an order online for delivery right to your door.</p>
+        <a href="/cake" class="btn btn-primary">Order Now</a>
+        <a href="/contact" class="btn btn-secondary">Contact Us</a>
+    </div>
+</section>
+
+<!-- Newsletter section -->
+<section id="newsletter" class="text-center py-5" style="background-color: #FFEBE5;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="mb-4" style="color: #FF6347; font-family: 'Indie Flower', cursive; font-size: 2.5rem;">Subscribe to Our Newsletter</h2>
+                <p class="text-muted mb-5" style="color: #FF6347; font-size: 1.2rem;">Stay updated with our latest sweets, promotions, and events!</p>
+                <form action="{% url 'subscribe' %}" method="post" class="row justify-content-center">
+                    <div class="col-md-6 mb-3">
+                        <input type="email" name="email" class="form-control border-4 py-4 rounded-pill" placeholder="Your Email" required>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary btn-block rounded-pill py-3" style="background-color: #FF6347; border-color: #FF6347;">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* CSS for changing border color and placeholder color on hover and focus */
+    .form-control.border-4.py-4.rounded-pill:hover {
+        border-color: #FF6347; /* Border color changes to red on hover */
+    }
+    
+    .form-control.border-4.py-4.rounded-pill:focus {
+        border-color: #FF6347; /* Border color when input is focused (placeholder is clicked) */
+    }
+    
+    .form-control.border-4.py-4.rounded-pill:hover::placeholder {
+        color: #FF6347; /* Placeholder color changes to red on hover */
+    }
+    
+    .form-control.border-4.py-4.rounded-pill:focus::placeholder {
+        color: initial; /* Placeholder color when input is focused (placeholder is clicked) */
+    }
+    
+    /* CSS for changing button color on hover */
+    .btn.btn-primary.btn-block.rounded-pill.py-3 {
+        background-color: #FF6347;
+        border-color: #FF6347;
+        color: #000; /* Set the text color to black */
+        transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Add smooth transition */
+    }
+
+    .btn.btn-primary.btn-block.rounded-pill.py-3:hover {
+        background-color: #000 !important; /* Change background color to black on hover */
+        border-color: #000 !important; /* Change border color to black on hover */
+        color: #FF6347; /* Change text color to your desired color on hover */
+    }
+
+</style>  
+
+{% endblock %}

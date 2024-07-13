@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block title %}About - Juhi Sweets{% endblock %}
+
+{% load static %}
+
+{% block body %}
+<style>
+    /* Styling for About Us page */
+    .about-us-header {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #d2691e; /* Fun color for header */
+        text-shadow: 2px 2px #ffdab9; /* Text shadow for effect */
+    }
+
+    .about-us-section {
+        margin: 40px 0;
+    }
+
+    .about-us-section h2 {
+        color: #8b0000; /* Complementary color for section headers */
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px #ffe4e1; /* Subtle text shadow */
+    }
+
+    .about-us-section p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .about-us-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .about-us-team img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .about-us-team h3 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .about-us-team p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .about-us-values {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 40px;
+    }
+
+    .value-box {
+        width: 30%;
+        background-color: #ffebcd;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .value-box h4 {
+        font-size: 1.5rem;
+        color: #8b0000;
+        margin-bottom: 10px;
+    }
+
+    .value-box p {
+        font-size: 1rem;
+        color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .value-box {
+            width: 45%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .value-box {
+            width: 100%;
+        }
+    }
+</style>
+
+<!-- About Us header section -->
+<div class="container about-us-section">
+    <h1 class="about-us-header">About Juhi Sweets</h1>
+    <div class="row">
+        <!-- Image of Juhi Sweets Store -->
+        <div class="col-md-6">
+            <img src="{% static 'img/about-Juhi Sweets Store' %}" alt="Juhi Sweets Store" class="about-us-image">
+        </div>
+        <!-- Brief introduction about Juhi Sweets -->
+        <div class="col-md-6">
+            <p>Welcome to Juhi Sweets, where tradition meets innovation. Since our founding in 1985, we have been committed to bringing the finest and most delicious sweets to our customers. Our journey began with a small shop and a big dream - to make the world a little sweeter, one dessert at a time.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Our Story section -->
+<div class="container about-us-section">
+    <h2>Our Story</h2>
+    <p>Juhi Sweets was started by Juhi Patel, a passionate baker with a love for creating delightful treats. Over the years, our dedication to quality and customer satisfaction has helped us grow into a beloved community staple. We believe in using the finest ingredients, traditional recipes, and a touch of creativity to craft sweets that not only taste amazing but also bring a smile to your face.</p>
+</div>
+
+<!-- Meet Our Team section -->
+<div class="container about-us-section about-us-team">
+    <h2>Meet Our Team</h2>
+    <div class="row">
+        <!-- Team member 1 -->
+        <div class="col-md-4 text-center">
+            <img src="{% static 'img/about-Juhi Patel' %}" alt="Juhi Patel" class="img-fluid">
+            <h3>Juhi Patel</h3>
+            <p>Founder & Head Chef</p>
+        </div>
+        <!-- Team member 2 -->
+        <div class="col-md-4 text-center">
+            <img src="{% static 'img/about-Rajesh Kumar' %}" alt="Rajesh Kumar" class="img-fluid">
+            <h3>Rajesh Kumar</h3>
+            <p>Pastry Chef</p>
+            <p>Rajesh Kumar brings over 15 years of experience in baking and pastry arts. His exquisite creations are a testament to his dedication to the craft and his attention to detail. Rajesh loves experimenting with new flavors and techniques to keep our pastry offerings fresh and exciting.</p>
+        </div>
+        <!-- Team member 3 -->
+        <div class="col-md-4 text-center">
+            <img src="{% static 'img/about-Amit Desai' %}" alt="Amit Desai" class="img-fluid">
+            <h3>Amit Desai</h3>
+            <p>Ice Cream Chef</p>
+            <p>Amit Desai has a passion for crafting unique and delicious ice cream flavors. With a background in dairy science and culinary arts, Amit combines his expertise to create ice creams that are both innovative and delightful. He is always exploring new ingredients to bring the best to our customers.</p>
+        </div>
+        <!-- Team member 4 -->
+        <div class="col-md-4 text-center">
+            <img src="{% static 'img/about-Priya Rao' %}" alt="Priya Rao" class="img-fluid">
+            <h3>Priya Rao</h3>
+            <p>Chocolate Chef</p>
+            <p>Priya Rao is our resident chocolate connoisseur. Her deep understanding of chocolate making, from bean to bar, allows her to create luxurious and decadent chocolates. Priya's creations are a blend of traditional techniques and modern flair, making them a favorite among our customers.</p>
+        </div>
+        <!-- Team member 5 -->
+        <div class="col-md-4 text-center">
+            <img src="{% static 'img/about-Anita Singh' %}" alt="Anita Singh" class="img-fluid">
+            <h3>Anita Singh</h3>
+            <p>Customer Service Manager</p>
+            <p>Anita Singh is dedicated to ensuring that every customer has a delightful experience at Juhi Sweets. With a background in hospitality management, Anita brings a warm and friendly approach to customer service. She is always ready to assist with a smile and ensure your visit is memorable.</p>
+        </div>
+        <!-- Team member 6 -->
+        <div class="col-md-4 text-center">
+            <img src="{% static 'img/about-Sunita Mehta' %}" alt="Sunita Mehta" class="img-fluid">
+            <h3>Sunita Mehta</h3>
+            <p>Bakery Manager</p>
+            <p>Sunita Mehta ensures that the bakery runs smoothly every day. With her extensive experience in bakery management, she oversees production, staff, and quality control, making sure that every product meets our high standards.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Our Values section -->
+<div class="container about-us-section">
+    <h2>Our Values</h2>
+    <div class="about-us-values">
+        <div class="value-box">
+            <h4>Quality</h4>
+            <p>We use only the finest ingredients to ensure every sweet we make is of the highest quality.</p>
+        </div>
+        <div class="value-box">
+            <h4>Tradition</h4>
+            <p>Our recipes are passed down through generations, preserving the authentic taste of our sweets.</p>
+        </div>
+        <div class="value-box">
+            <h4>Innovation</h4>
+            <p>We love to experiment with new flavors and techniques to keep our offerings exciting and fresh.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Visit Us section -->
+<div class="container about-us-section">
+    <h2>Visit Us</h2>
+    <p>We invite you to visit our store and experience the delightful world of Juhi Sweets. Whether you are looking for a treat for yourself or a gift for a loved one, we have something for everyone. We look forward to welcoming you!</p>
+    <p><strong>Address:</strong> 123 Sweet Street, Dessert Town, Candyland</p>
+    <p><strong>Phone:</strong> (123) 456-7890</p>
+    <p><strong>Email:</strong> info@juhisweets.com</p>
+</div>
+{% endblock %}

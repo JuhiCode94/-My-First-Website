@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}Cakes - Juhi Sweets{% endblock %}
+
+{% load static %}
+
+{% block body %}
+<!-- Custom CSS styles for the Cakes page -->
+<style>
+    /* Styling for each cake item */
+    .cake-item {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    /* Image styling */
+    .cake-item img {
+        height: 300px; /* Set a fixed height for images */
+        width: 100%; /* Ensure images fill the container */
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+        border-radius: 15px; /* Rounded corners for images */
+    }
+
+    /* Cake title styling */
+    .cake-item h3 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        color: #d2691e; /* Brownish color for cake titles */
+    }
+
+    /* Cake description styling */
+    .cake-item p {
+        font-size: 1rem;
+        color: #8b0000; /* Dark red color for cake descriptions */
+    }
+
+    /* Price styling */
+    .cake-item .price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #d2691e; /* Brownish color for price */
+        margin: 10px 0; /* Margin around the price */
+    }
+
+    /* Buy button styling */
+    .cake-item .btn-buy {
+        background-color: #FF6347; /* Coral color for button background */
+        border-color: #FF6347; /* Coral color for button border */
+        color: white; /* White text color */
+        transition: background-color 0.3s, border-color 0.3s; /* Smooth transition on hover */
+    }
+
+    /* Hover effect for buy button */
+    .cake-item .btn-buy:hover {
+        background-color: #000; /* Black background on hover */
+        border-color: #000; /* Black border on hover */
+        color: #FF6347; /* Coral text color on hover */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .cake-item img {
+            height: 200px; /* Adjust image height on smaller screens */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .cake-item img {
+            height: 150px; /* Further adjust image height on smaller screens */
+        }
+    }
+</style>
+
+<!-- Container for cakes with margin -->
+<div class="container my-5">
+    <!-- Main heading for cakes section -->
+    <h1 class="text-center mb-5" style="color: #d2691e; font-family: 'Indie Flower', cursive;">Our Delicious Cakes</h1>
+    <!-- Row for cake items -->
+    <div class="row">
+        <!-- Cake Item 1 -->
+        <div class="col-md-4 cake-item">
+            <img src="{% static 'img/cake-Chocolate Cake' %}" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>A rich and moist chocolate cake, perfect for any occasion.</p>
+            <div class="price">$25</div>
+            <a href="/order_confirmation?item=Chocolate%20Cake&price=25&image_url={% static 'img/cake-Chocolate Cake' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Cake Item 2 -->
+        <div class="col-md-4 cake-item">
+            <img src="{% static 'img/cake-Vanilla Cake' %}" alt="Vanilla Cake">
+            <h3>Vanilla Cake</h3>
+            <p>A classic vanilla cake with a creamy frosting.</p>
+            <div class="price">$20</div>
+            <a href="/order_confirmation?item=Vanilla%20Cake&price=20&image_url={% static 'img/cake-Vanilla Cake' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Cake Item 3 -->
+        <div class="col-md-4 cake-item">
+            <img src="{% static 'img/cake-Red Velvet Cake' %}" alt="Red Velvet Cake">
+            <h3>Red Velvet Cake</h3>
+            <p>A delicious red velvet cake with a hint of chocolate.</p>
+            <div class="price">$30</div>
+            <a href="/order_confirmation?item=Red%20Velvet%20Cake&price=30&image_url= {% static 'img/cake-Red Velvet Cake' %}"class="btn btn-buy">Buy Now</a>
+        </div>
+    </div>
+    <!-- Second row for additional cake items -->
+    <div class="row">
+        <!-- Cake Item 4 -->
+        <div class="col-md-4 cake-item">
+            <img src="{% static 'img/cake-Fruit Cake' %}" alt="Fruit Cake">
+            <h3>Fruit Cake</h3>
+            <p>A delightful cake loaded with fresh fruits.</p>
+            <div class="price">$28</div>
+            <a href="/order_confirmation?item=Fruit%20Cake&price=28&image_url={% static 'img/cake-Fruit Cake' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Cake Item 5 -->
+        <div class="col-md-4 cake-item">
+            <img src="{% static 'img/cake-Cheesecake' %}" alt="Cheesecake">
+            <h3>Cheesecake</h3>
+            <p>A creamy cheesecake with a graham cracker crust.</p>
+            <div class="price">$35</div>
+            <a href="/order_confirmation?item=Cheesecake&price=35&image_url={% static 'img/cake-Cheesecake' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Cake Item 6 -->
+        <div class="col-md-4 cake-item">
+            <img src="{% static 'img/cake-Cupcake' %}" alt="Cupcake">
+            <h3>Cupcake</h3>
+            <p>A delightful variety of cupcakes, perfect for parties.</p>
+            <div class="price">$15</div>
+            <a href="/order_confirmation?item=Cupcake&price=15&image_url={% static 'img/cake-Cupcake' %}" class="btn btn-buy">Buy Now</a>
+                    
+        </div>
+    </div>
+</div>
+{% endblock %}

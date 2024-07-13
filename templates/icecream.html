@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Ice Cream - Juhi Sweets{% endblock %}
+
+{% load static %}
+
+{% block body %}
+<!-- Custom CSS styles for the Ice Cream page -->
+<style>
+    /* Styling for each ice cream item */
+    .icecream-item {
+        margin-bottom: 30px; /* Space between each ice cream item */
+        text-align: center; /* Center-align text */
+    }
+
+    /* Image styling */
+    .icecream-item img {
+        height: 300px; /* Set a fixed height for images */
+        width: 100%; /* Ensure images fill the container */
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+        border-radius: 15px; /* Rounded corners for images */
+    }
+
+    /* Ice cream title styling */
+    .icecream-item h3 {
+        font-size: 1.5rem; /* Larger font size for titles */
+        margin-top: 10px; /* Space above the title */
+        color: #800080; /* Dark purple color for ice cream titles */
+    }
+
+    /* Ice cream description styling */
+    .icecream-item p {
+        font-size: 1rem; /* Regular font size for descriptions */
+        color: #9370DB; /* Medium purple color for ice cream descriptions */
+    }
+
+    /* Price styling */
+    .icecream-item .price {
+        font-size: 1.2rem; /* Slightly larger font size for prices */
+        font-weight: bold; /* Bold font weight for emphasis */
+        color: #BA55D3; /* Purple color for price */
+        margin: 10px 0; /* Margin around the price */
+    }
+
+    /* Buy button styling */
+    .icecream-item .btn-buy {
+        background-color: #FF6347; /* Coral color for button background */
+        border-color: #FF6347; /* Coral color for button border */
+        color: white; /* White text color */
+        transition: background-color 0.3s, border-color 0.3s; /* Smooth transition on hover */
+    }
+
+    /* Hover effect for buy button */
+    .icecream-item .btn-buy:hover {
+        background-color: #000; /* Black background on hover */
+        border-color: #000; /* Black border on hover */
+        color: #FF6347; /* Coral text color on hover */
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+        .icecream-item img {
+            height: 200px; /* Adjust image height on smaller screens */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .icecream-item img {
+            height: 150px; /* Further adjust image height on smaller screens */
+        }
+    }
+</style>
+
+<!-- Container for ice creams with margin -->
+<div class="container my-5">
+    <!-- Main heading for ice creams section -->
+    <h1 class="text-center mb-5" style="color: #800080; font-family: 'Indie Flower', cursive;">Our Delicious Ice Creams</h1>
+    <!-- Row for ice cream items -->
+    <div class="row">
+        <!-- Ice Cream Item 1 -->
+        <div class="col-md-4 icecream-item">
+            <img src="{% static 'img/ice cream-Vanilla Ice Cream' %}" alt="Vanilla Ice Cream">
+            <h3>Vanilla Ice Cream</h3>
+            <p>Classic vanilla ice cream made with real vanilla beans.</p>
+            <div class="price">$5</div>
+            <a href="order_confirmation?item=Vanilla%20Ice%20Cream&price=5&image_url={% static 'img/ice cream-Vanilla Ice Cream' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Ice Cream Item 2 -->
+        <div class="col-md-4 icecream-item">
+            <img src="{% static 'img/ice cream-Chocolate Ice Cream' %}" alt="Chocolate Ice Cream">
+            <h3>Chocolate Ice Cream</h3>
+            <p>Rich and creamy chocolate ice cream made with high-quality cocoa.</p>
+            <div class="price">$6</div>
+            <a href="/order_confirmation?item=Chocolate%20Ice%20Cream&price=6&image_url={% static 'img/ice cream-Chocolate Ice Cream' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Ice Cream Item 3 -->
+        <div class="col-md-4 icecream-item">
+            <img src="{% static 'img/ice cream-Strawberry Ice Cream' %}" alt="Strawberry Ice Cream">
+            <h3>Strawberry Ice Cream</h3>
+            <p>Fresh strawberry ice cream with chunks of real strawberries.</p>
+            <div class="price">$5</div>
+            <a href="/order_confirmation?item=Strawberry%20Ice%20Cream&price=5&image_url={% static 'img/ice cream-Strawberry Ice Cream' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+    </div>
+    <!-- Second row for additional ice cream items -->
+    <div class="row">
+        <!-- Ice Cream Item 4 -->
+        <div class="col-md-4 icecream-item">
+            <img src="{% static 'img/ice cream-Mint Chocolate Chip' %}" alt="Mint Chocolate Chip">
+            <h3>Mint Chocolate Chip</h3>
+            <p>Refreshing mint ice cream with chocolate chips.</p>
+            <div class="price">$6</div>
+            <a href="/order_confirmation?item=Mint%20Chocolate%20Chip&price=6&image_url={% static 'img/ice cream-Mint Chocolate Chip' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Ice Cream Item 5 -->
+        <div class="col-md-4 icecream-item">
+            <img src="{% static 'img/ice cream-Cookies and Cream' %}" alt="Cookies and Cream">
+            <h3>Cookies and Cream</h3>
+            <p>Delicious ice cream with chunks of chocolate cookies.</p>
+            <div class="price">$7</div>
+            <a href="/order_confirmation?item=Cookies%20and%20Cream&price=7&image_url={% static 'img/ice cream-Cookies and Cream' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+        <!-- Ice Cream Item 6 -->
+        <div class="col-md-4 icecream-item">
+            <img src="{% static 'img/ice cream-Pistachio Ice Cream' %}" alt="Pistachio Ice Cream">
+            <h3>Pistachio Ice Cream</h3>
+            <p>Creamy pistachio ice cream with a hint of almond flavor.</p>
+            <div class="price">$8</div>
+            <a href="/order_confirmation?item=Pistachio%20Ice%20Cream&price=8&image_url={% static 'img/ice cream-Pistachio Ice Cream' %}" class="btn btn-buy">Buy Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
