@@ -7,8 +7,6 @@ This is a Django-based website for Juhi Sweets, showcasing various products like
 - [Setup](#setup)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
