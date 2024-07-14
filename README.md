@@ -19,6 +19,25 @@ This is a Django-based website for Juhi Sweets, showcasing various products like
 
 ## Setup
 
+**Create a virtual environment and activate it:**
+
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+**Install the required packages:**
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+**Apply migrations:**
+
+    ```sh
+    python manage.py migrate
+    ```
+
 ### Prerequisites
 
 - Python 3.11.4 or higher
@@ -98,3 +117,4 @@ juhi-sweets/
 │   ├── urls.py
 │   └── wsgi.py
 ├── manage.py
+└── requirements.txt
