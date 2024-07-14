@@ -25,3 +25,78 @@ This is a Django-based website for Juhi Sweets, showcasing various products like
 
 - Python 3.11.4 or higher
 - Django 5.0.6
+
+**Apply migrations:**
+
+    ```sh
+    python manage.py migrate
+    ```
+
+**Run the development server:**
+
+    ```sh
+    python manage.py runserver
+    ```
+
+**Open your browser and navigate to:** `http://127.0.0.1:8000`
+
+### Usage
+
+#### URLs and Views
+
+- **Home Page:** `http://127.0.0.1:8000/`
+- **About Page:** `http://127.0.0.1:8000/about`
+- **Cake Page:** `http://127.0.0.1:8000/cake`
+- **Chocolate Page:** `http://127.0.0.1:8000/chocolate`
+- **Ice Cream Page:** `http://127.0.0.1:8000/icecream`
+- **Privacy Policy Page:** `http://127.0.0.1:8000/privacy`
+- **Terms and Conditions Page:** `http://127.0.0.1:8000/terms`
+- **Contact Page:** `http://127.0.0.1:8000/contact`
+- **Order Confirmation Page:** `http://127.0.0.1:8000/order_confirmation`
+- **Order Summary Page:** `http://127.0.0.1:8000/order_summary`
+- **Subscription Page:** `http://127.0.0.1:8000/subscribe`
+- **Search Results Page:** `http://127.0.0.1:8000/search_results`
+
+#### Admin Panel
+
+Access the admin panel at `http://127.0.0.1:8000/admin` with the following credentials:
+
+- **Username:** admin
+- **Password:** admin_password
+
+### Project Structure
+
+```plaintext
+juhi-sweets/
+├── home/
+│   ├── migrations/
+│   ├── static/
+│   │   ├── css/
+│   │   ├── img/
+│   │   └── js/
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── index.html
+│   │   ├── about.html
+│   │   ├── cake.html
+│   │   ├── chocolate.html
+│   │   ├── icecream.html
+│   │   ├── privacy.html
+│   │   ├── terms.html
+│   │   ├── contact.html
+│   │   ├── order_confirmation.html
+│   │   ├── order_summary.html
+│   │   └── search_results.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── mysite/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
