@@ -21,20 +21,20 @@ This is a Django-based website for Juhi Sweets, showcasing various products like
 
 **Create a virtual environment and activate it:**
 
-    ```sh
+    ```
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
 
 **Install the required packages:**
 
-    ```sh
+    ```
     pip install -r requirements.txt
     ```
 
 **Apply migrations:**
 
-    ```sh
+    ```
     python manage.py migrate
     ```
 
