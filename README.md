@@ -40,7 +40,7 @@ This is a Django-based website for Juhi Sweets, showcasing various products like
 
 ### Prerequisites
 
-- Python 3.11.4 or higher
+- Python 3.11.4
 - Django 5.0.6
 
 **Apply migrations:**
