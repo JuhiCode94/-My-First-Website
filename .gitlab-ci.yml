@@ -1,0 +1,50 @@
+image: docker:24.0
+
+services:
+  - docker:24.0-dind
+
+variables:
+  DOCKER_DRIVER: overlay2
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  # Log in to the GitLab Container Registry
+  - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+
+build:
+  stage: build
+  script:
+    # Build the Docker image
+    - docker build -t $CONTAINER_TEST_IMAGE .
+    # Push the Docker image to the GitLab Container Registry
+    - docker push $CONTAINER_TEST_IMAGE
+  only:
+    - main
+
+test:
+  stage: test
+  script:
+    # Pull the image from the registry to ensure it exists
+    - docker pull $CONTAINER_TEST_IMAGE
+    # Run the container for testing
+    - docker run -d --name test_container $CONTAINER_TEST_IMAGE
+    - docker exec test_container python manage.py test
+    - docker rm -f test_container
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  script:
+    # Pull the Docker image for deployment
+    - docker pull $CONTAINER_TEST_IMAGE
+    # Run the Django application container for GitLab Pages
+    - docker run -d -p 8000:8000 --name deploy_container $CONTAINER_TEST_IMAGE
+    # Optional: If you have additional deployment steps, include them here.
+  only:
+    - main
